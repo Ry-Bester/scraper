@@ -1,0 +1,25 @@
+{
+  "name": "young-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.2",
+    "chromedriver": "^92.0.1",
+    "click": "^0.1.0",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^1.14.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "selenium": "^2.20.0",
+    "selenium-webdriver": "^4.0.0-beta.4",
+    "shelljs": "^0.8.3",
+    "webdriver": "^7.10.1"
+  }
+}
