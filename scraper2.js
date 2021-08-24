@@ -17,9 +17,9 @@ var driver = new webdriver.Builder()
     .build();
 const action = driver.actions;
 
-const domain = "https://alluraaesthetics.com";
+const domain = "https://alluraaesthetics.com/";
 const urls = [
-    '/blog/',
+    '/blog/'
 
 ]
 
@@ -42,19 +42,24 @@ urls.reverse(); //reverse array order because we are using the pop method
 scrape(urls, "", []);
 async function scrape(urls, blogIndexContent, blogUrls) {
 
-    await sleep(1000).then(() => { //set limiter time here
+    await sleep(1000).then(() => {
+        //set limiter time here
         if (urls.length > 0) {
             sleep(100).then(() => {
                 (async function run() {
                     try {
                         let blogIndexContentRaw = "";
-                        const view_more = driver.findElement(By.id("view-more"));
-                        driver.executeScript("arguments[0].click();", view_more)
 
                         const res1 = await driver.get(domain + urls.pop());
-                        htmlD = await driver.getPageSource();
-                        htmlD = htmlD.toString();
                         /* Button Click Function */
+                        const view_more = driver.findElement(By.id("view-more"));
+                        driver.executeScript("arguments[0].click();", view_more)
+                        await sleep(1000);
+                        driver.executeScript("arguments[0].click();", view_more)
+                        await sleep(1000);
+                        htmlD = await driver.getPageSource();
+                        htmlD = htmlD.toString("/");
+
 
                         /* SET BLOG INDEX CONTENT ITEMS HERE */
                         $(".postlist__card", htmlD).each(function () {
